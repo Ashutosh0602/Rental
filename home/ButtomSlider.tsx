@@ -2,8 +2,9 @@ import { StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
 import { BottomSheet, Button, ListItem } from "@rneui/themed";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import CarCorousel from "./CarCorousel";
 
-const ButtomSlider = () => {
+const ButtomSlider = (): JSX.Element => {
   const [isVisible, setIsVisible] = useState(true);
   const list = [
     { title: "List Item 1" },
@@ -16,14 +17,8 @@ const ButtomSlider = () => {
     },
   ];
   return (
-    <SafeAreaProvider>
-      {/* <Button
-        title="Open Bottom Sheet"
-        onPress={() => setIsVisible(true)}
-        buttonStyle={styles.button}
-      /> */}
+    <SafeAreaProvider style={{ backgroundColor: "#262626" }}>
       <BottomSheet
-        // modalProps={{ visible: true }}
         isVisible={isVisible}
         backdropStyle={{ backfaceVisibility: "hidden" }}
         containerStyle={{ backgroundColor: "transparent" }}
@@ -31,17 +26,7 @@ const ButtomSlider = () => {
           isVisible == true ? setIsVisible(false) : setIsVisible(true);
         }}
       >
-        <Text
-          onPressIn={() => setIsVisible(false)}
-          style={{
-            backgroundColor: "white",
-            fontSize: 50,
-            borderTopRightRadius: 20,
-            borderTopLeftRadius: 20,
-          }}
-        >
-          Hello world
-        </Text>
+        <CarCorousel />
       </BottomSheet>
     </SafeAreaProvider>
   );

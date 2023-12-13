@@ -6,7 +6,7 @@ import { useNavigation } from "@react-navigation/native";
 import cssVariables from "../utilities/cssVariables";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
-const Welcome = () => {
+const Welcome = (): JSX.Element => {
   const navigation = useNavigation<NativeStackNavigationProp<any>>();
 
   return (

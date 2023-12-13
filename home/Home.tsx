@@ -6,7 +6,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import ButtomSlider from "./ButtomSlider";
 import BottomSlider from "./BottomSlider";
 
-const Home = () => {
+const Home = (): JSX.Element => {
   return (
     <SafeAreaProvider style={styles.container}>
       {/* <BottomSlider /> */}

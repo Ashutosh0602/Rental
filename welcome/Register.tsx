@@ -13,7 +13,8 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
 import cssVariables from "../utilities/cssVariables";
 import * as ImagePicker from "expo-image-picker";
 import { Icon } from "@rneui/base";
-const Register = () => {
+
+const Register = (): JSX.Element => {
   const [email, onChangeEmail] = React.useState<string>("");
   const [phoneNumber, onChangePhoneNumber] = React.useState("");
   const [name, onChangeName] = React.useState("");

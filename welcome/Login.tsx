@@ -16,7 +16,7 @@ import { Input, Button } from "react-native-elements";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
-const Login = () => {
+const Login = (): JSX.Element => {
   const navigation = useNavigation<NativeStackNavigationProp<any>>();
 
   const [email, onChangeEmail] = React.useState("");

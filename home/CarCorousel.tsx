@@ -3,7 +3,6 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableWithoutFeedback,
   Image,
   TouchableOpacity,
 } from "react-native";
@@ -35,7 +34,9 @@ const CarCorousel = (): JSX.Element => {
               justifyContent: "space-between",
             }}
           >
-            <Text style={{ color: "lightgray", fontSize: 16, fontWeight: 500 }}>
+            <Text
+              style={{ color: "lightgray", fontSize: 16, fontWeight: "500" }}
+            >
               {item.carName.toUpperCase()} [{item.carNumber}]
             </Text>
             <Text style={{ color: "lightgray", fontSize: 20 }}>
@@ -57,9 +58,9 @@ const CarCorousel = (): JSX.Element => {
             }}
           >
             <Text style={{ color: "gray" }}>📍{item.distance}</Text>
-            <Text style={{ color: "lightgray", fontSize: 20 }}>
+            <Text style={{ color: "lightgray", fontSize: 20, marginRight: 8 }}>
               <Text style={{ color: "#EEAA2C" }}>$</Text>
-              {item.price}
+              {item.price}/<Text style={{ fontSize: 13 }}>hr</Text>
             </Text>
           </View>
           <View

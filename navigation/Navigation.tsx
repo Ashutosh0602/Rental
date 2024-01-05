@@ -20,7 +20,9 @@ export default function Navigation() {
         <SafeAreaProvider>
           <StatusBar
             backgroundColor="linear-gradient(0deg, rgba(2,0,36,0) 0%, rgba(255,255,255,1) 100%)"
-            barStyle="light-content"
+            // hidden={false}
+            style="dark"
+            networkActivityIndicatorVisible={false}
           />
           <Stack.Navigator>
             <Stack.Screen
@@ -50,6 +52,8 @@ export default function Navigation() {
               component={Register}
               options={{
                 headerShown: false,
+                gestureEnabled: true,
+                gestureDirection: "horizontal",
                 animationTypeForReplace: "push",
                 animation: "slide_from_right",
               }}
@@ -62,7 +66,7 @@ export default function Navigation() {
                 gestureEnabled: true,
                 gestureDirection: "horizontal",
                 animationTypeForReplace: "push",
-                animation: "flip",
+                animation: "slide_from_right",
               }}
             />
           </Stack.Navigator>

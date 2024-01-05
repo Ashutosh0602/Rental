@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { BottomSheet, Button, ListItem } from "@rneui/themed";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import CarCorousel from "./CarCorousel";
+import { Ionicons } from "@expo/vector-icons";
 
 const ButtomSlider = (): JSX.Element => {
   const [isVisible, setIsVisible] = useState(true);
@@ -17,17 +18,42 @@ const ButtomSlider = (): JSX.Element => {
     },
   ];
   return (
-    <SafeAreaProvider style={{ backgroundColor: "#262626" }}>
-      <BottomSheet
-        isVisible={isVisible}
-        backdropStyle={{ backfaceVisibility: "hidden" }}
-        containerStyle={{ backgroundColor: "transparent" }}
-        onBackdropPress={() => {
-          isVisible == true ? setIsVisible(false) : setIsVisible(true);
-        }}
-      >
-        <CarCorousel />
-      </BottomSheet>
+    <SafeAreaProvider
+      style={{ backgroundColor: "#262626", position: "relative" }}
+    >
+      {setIsVisible ? (
+        <View
+          style={{
+            position: "absolute",
+            bottom: -700,
+            left: 300,
+            backgroundColor: "#EEAA2C",
+            padding: 10,
+            borderRadius: 10,
+          }}
+        >
+          <Ionicons
+            name="search"
+            color="white"
+            size={30}
+            onPress={() => setIsVisible(true)}
+          />
+        </View>
+      ) : (
+        <></>
+      )}
+      <View>
+        <BottomSheet
+          isVisible={isVisible}
+          backdropStyle={{ backfaceVisibility: "hidden" }}
+          containerStyle={{ backgroundColor: "transparent" }}
+          onBackdropPress={() => {
+            isVisible == true ? setIsVisible(false) : setIsVisible(true);
+          }}
+        >
+          <CarCorousel />
+        </BottomSheet>
+      </View>
     </SafeAreaProvider>
   );
 };

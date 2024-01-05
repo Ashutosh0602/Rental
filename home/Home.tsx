@@ -5,6 +5,7 @@ import Map from "../components/Map";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import ButtomSlider from "./ButtomSlider";
 import BottomSlider from "./BottomSlider";
+import { StatusBar } from "expo-status-bar";
 
 const Home = (): JSX.Element => {
   return (
@@ -13,7 +14,6 @@ const Home = (): JSX.Element => {
       <View style={styles.slider}>
         <ButtomSlider />
       </View>
-      {/* <Text>Hello world</Text> */}
       <Map />
     </SafeAreaProvider>
   );
